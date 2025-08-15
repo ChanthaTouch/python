@@ -51,6 +51,7 @@ def create_project(project: ProjectlistCreate, db: Session = Depends(get_db)):
     db.commit()
     db.refresh(new_project)
     return new_project
+# ===========learn to commit code to github ===============
 
 @app.get("/projects", response_model=List[ProjectlistResponse])
 def get_all_projects(db: Session = Depends(get_db)):
