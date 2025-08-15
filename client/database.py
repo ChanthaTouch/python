@@ -1,0 +1,9 @@
+from sqlalchemy import create_engine
+from sqlalchemy.ext.declarative import declarative_base
+from sqlalchemy.orm import sessionmaker
+
+# Example MySQL URL: "mysql+pymysql://username:password@localhost/dbname"
+DATABASE_URL = "mysql+mysqlconnector://root:@127.0.0.1/fastapi_db"
+engine = create_engine(DATABASE_URL)
+SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)
+Base = declarative_base()
